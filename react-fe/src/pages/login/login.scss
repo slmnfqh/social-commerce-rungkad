@@ -1,0 +1,112 @@
+.login {
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  background-color: rgb(193, 190, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .card {
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    min-height: 600px;
+    width: 60%;
+    overflow: hidden;
+
+    .left {
+      flex: 1;
+      background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(17, 3, 46, 0.767)),
+        url("https://images.unsplash.com/photo-1597848212624-a19eb35e2651?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+          center;
+      background-size: cover;
+      padding: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 40px;
+
+      h1 {
+        font-size: 70px;
+        color: white;
+      }
+
+      p {
+        font-size: 20px;
+        font-weight: 300;
+        text-align: justify;
+        line-height: 30px;
+        color: rgba(232, 232, 232, 0.827);
+      }
+
+      span {
+        font-size: 17px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.575);
+      }
+
+      button {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px 50px;
+        text-align: center;
+        border-radius: 5px;
+        border: none;
+        background-color: themed("bg");
+        color: rebeccapurple;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+
+    .right {
+      flex: 1;
+      width: 80%;
+      padding: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 50px;
+      justify-content: center;
+
+      h1 {
+        color: #555;
+        font-size: 50px;
+        margin-top: 60px;
+      }
+
+      form {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+
+        input {
+          outline: none;
+          background-color: transparent;
+          border: none;
+          width: 100%;
+          border-bottom: 1px solid lightgray;
+          padding: 20px 10px;
+        }
+
+        button {
+          width: 100%;
+          font-size: 14px;
+          padding: 10px 50px;
+          text-align: center;
+          border-radius: 5px;
+          border: none;
+          background-color: #938eef;
+          color: white;
+          font-weight: bold;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
