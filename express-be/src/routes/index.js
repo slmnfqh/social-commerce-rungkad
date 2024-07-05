@@ -7,6 +7,7 @@ import multer from "multer";
 import postRoute from "./main/posts.js";
 import relationshipRoute from "./main/relationship.js";
 import userRoute from "./main/users.js";
+import storyRoute from "./main/story.js";
 
 const app = express();
 
@@ -33,5 +34,6 @@ app.use("/comments", commentRoute);
 app.use("/auth", authRoute);
 app.use("/relationship", relationshipRoute);
 app.use("/collections", collectionsRoute);
+app.use("/stories", storyRoute);
 
 export default app;

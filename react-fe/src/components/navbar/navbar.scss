@@ -1,7 +1,9 @@
 @import "../../style.scss";
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 
 .navbar {
-  font-family: "Poppins", sans-serif;
+  font-family: "Pacifico", sans-serif;
+
   @include themify($themes) {
     display: flex;
     align-items: center;
@@ -16,29 +18,58 @@
     z-index: 999;
 
     .left {
+      cursor: pointer;
       display: flex;
       align-items: center;
       gap: 30px;
 
-      span {
+      .item {
+        @include mobile {
+          font-size: 20px;
+        }
+      }
+
+      h3 {
+        font-family: "Pacifico", sans-serif;
         font-weight: bold;
-        font-size: 20px;
-        color: themed("logo");
+        font-size: 25px;
+        padding-right: 10px;
+        background: linear-gradient(
+          90deg,
+          rgb(20, 177, 201) 6%,
+          rgba(172, 40, 195, 1) 42%,
+          rgba(228, 0, 74, 1) 89%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        @include mobile {
+          font-size: 19px;
+        }
       }
 
       .search {
+        padding: 0 10px;
         display: flex;
         align-items: center;
+        background-color: themed("bg");
+        position: relative;
+        cursor: default;
         gap: 10px;
         border: 1px solid themed("border");
         border-radius: 5px;
-        padding: 5px;
+
+        @include mobile {
+          border: none;
+        }
 
         input {
           border: none;
-          width: 500px;
+          outline: none;
+          width: 300px;
           background-color: transparent;
           color: themed("textColor");
+          font-family: "Poppins", sans-serif;
 
           @include mobile {
             display: none;
@@ -46,6 +77,90 @@
 
           @include tablet {
             width: 200px;
+          }
+        }
+
+        .search-button,
+        .clear-button {
+          border: none;
+          outline: none;
+          cursor: pointer;
+          font-family: "Poppins", sans-serif;
+          font-size: 14px;
+          padding: 8px 10px;
+          border-radius: 5px;
+          background-color: themed("bg");
+          color: themed("textColor");
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+
+        .search-results {
+          position: absolute;
+          z-index: 1000;
+          top: 30px;
+          left: 0;
+          width: 100%;
+          font-weight: bold;
+          font-family: "Poppins", sans-serif;
+          background-color: themed("bg");
+          border: 1px solid themed("border");
+          border-top: none;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          max-height: 300px;
+          overflow-y: auto;
+
+          ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+              padding: 10px;
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              border-bottom: 1px solid themed("border");
+
+              &.error-message {
+                justify-content: center;
+                color: red;
+                font-size: 14px;
+                font-weight: bold;
+              }
+
+              img {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                object-fit: cover;
+              }
+
+              span {
+                font-size: 14px;
+                font-weight: 600;
+              }
+
+              a {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                text-decoration: none;
+                color: themed("textColor");
+
+                &:hover {
+                  opacity: 0.8;
+                }
+              }
+            }
+          }
+
+          p {
+            padding: 10px;
+            margin: 0;
+            color: themed("textColor");
           }
         }
       }
@@ -64,24 +179,44 @@
         display: flex;
         align-items: center;
         color: themed("textColor");
-        justify-content: center;
-        text-align: center;
-        gap: 7px;
-        font-size: 14px;
-        font-weight: bold;
 
-        @include tablet {
-          display: none;
-        }
+        a {
+          gap: 10px;
+          display: flex;
+          align-items: center;
+          text-decoration: none;
+          color: inherit;
 
-        img {
-          width: 30px;
-          height: 30px;
-          border-radius: 50%;
-          object-fit: cover;
-        }
+          img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
 
-        span {
+            &:hover {
+              opacity: 0.8;
+              cursor: pointer;
+            }
+          }
+
+          span {
+            font-size: 13px;
+            font-weight: bold;
+            font-family: "Poppins", sans-serif;
+
+            &:hover {
+              opacity: 0.8;
+              cursor: pointer;
+            }
+
+            @include mobile {
+              display: none;
+            }
+
+            @include tablet {
+              display: block;
+            }
+          }
         }
       }
     }

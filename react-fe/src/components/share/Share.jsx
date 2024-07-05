@@ -6,6 +6,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../context/authContext";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { makeRequest } from "../../axios";
+
 const Share = () => {
   const [file, setFile] = useState(null);
   const [desc, setDesc] = useState("");
@@ -22,6 +23,8 @@ const Share = () => {
   };
 
   const { currentUser } = useContext(AuthContext);
+  const defaultProfilePic =
+    "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
 
   const queryClient = useQueryClient();
 
@@ -51,10 +54,17 @@ const Share = () => {
       <div className="container">
         <div className="top">
           <div className="left">
-            <img src={"/upload/" + currentUser.profilePic} alt="" />
+            <img
+              src={
+                currentUser.profilePic
+                  ? `/upload/${currentUser.profilePic}`
+                  : defaultProfilePic
+              }
+              alt=""
+            />
             <input
               type="text"
-              placeholder={`What's on your mind ${currentUser.name}?`}
+              placeholder={`What's on your mind ${currentUser.username}?`}
               onChange={(e) => setDesc(e.target.value)}
               value={desc}
             />

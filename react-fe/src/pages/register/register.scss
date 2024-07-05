@@ -18,7 +18,10 @@
     .left {
       flex: 1;
       width: 50%;
-      background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(17, 3, 46, 0.767)),
+      background: linear-gradient(
+          rgba(39, 11, 96, 0.677),
+          rgba(17, 3, 46, 0.767)
+        ),
         url("https://images.pexels.com/photos/9201276/pexels-photo-9201276.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
           center;
       background-size: cover;
@@ -30,16 +33,25 @@
       gap: 40px;
 
       h1 {
+        padding-right: 10px;
+        font-family: "Pacifico", sans-serif;
         font-size: 70px;
-        color: white;
+        background: linear-gradient(
+          90deg,
+          rgb(20, 177, 201) 6%,
+          rgba(172, 40, 195, 1) 42%,
+          rgba(228, 0, 74, 1) 89%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
 
       p {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 300;
         text-align: justify;
         line-height: 30px;
-        color: rgba(232, 232, 232, 0.827);
+        color: rgba(255, 255, 255, 0.575);
       }
 
       span {
@@ -59,6 +71,12 @@
         color: rebeccapurple;
         font-weight: bold;
         cursor: pointer;
+        transition: all 0.3s ease; /* Animasi untuk semua properti */
+
+        &:hover {
+          transform: translateY(-3px); /* Efek sedikit naik */
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan saat dihover */
+        }
       }
     }
 
@@ -74,8 +92,9 @@
       justify-content: center;
 
       h1 {
-        color: #555;
-        font-size: 50px;
+        color: themed("textColor");
+        font-size: 55px;
+        font-weight: bold;
       }
 
       form {
@@ -106,6 +125,12 @@
           color: white;
           font-weight: bold;
           cursor: pointer;
+          transition: all 0.3s ease; /* Animasi untuk semua properti */
+
+          &:hover {
+            transform: translateY(-3px); /* Efek sedikit naik */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan saat dihover */
+          }
         }
       }
     }

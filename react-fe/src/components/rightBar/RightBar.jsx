@@ -42,7 +42,7 @@ const RightBar = () => {
                 alt=""
               />
               <p>
-                <span>Jane Doe</span> changed their cover picture
+                <span>Alvian</span> changed their cover picture
               </p>
             </div>
             <span>1 min ago</span>

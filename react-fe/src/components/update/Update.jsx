@@ -8,6 +8,7 @@ const Update = ({ setOpenUpdate, user }) => {
   const [cover, setCover] = useState(null);
   const [profile, setProfile] = useState(null);
   const [texts, setTexts] = useState({
+    id: user?.id,
     username: user?.username || "",
     email: user?.email || "",
     name: user?.name || "",
@@ -58,11 +59,15 @@ const Update = ({ setOpenUpdate, user }) => {
         profilePic: profileUrl,
       };
 
-      await mutation.mutateAsync(updatedUser); // Use mutateAsync for async mutations
+      await mutation.mutateAsync(updatedUser);
+
+      // Update local storage
+      localStorage.setItem("user", JSON.stringify(updatedUser));
 
       setOpenUpdate(false);
       setCover(null);
       setProfile(null);
+      window.location.reload();
     } catch (error) {
       console.error("Error updating user:", error);
       // Handle error as needed

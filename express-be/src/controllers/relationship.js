@@ -3,7 +3,7 @@ import { query } from "express";
 import { db } from "../config/connectDb.js";
 
 export const getRelationship = async (req, res) => {
-  const q = `SELECT followerUserId FROM relationships WHERE followedUserId = ? `;
+  const q = `SELECT DISTINCT followerUserId FROM relationships WHERE followedUserId = ?`;
 
   db.query(q, [req.query.followedUserId], (err, data) => {
     if (err) return res.status(500).json(err);
@@ -21,15 +21,26 @@ export const addRelationship = async (req, res) => {
   jwt.verify(token, "rahasia", (err, userInfo) => {
     if (err) return res.status(403).json("Token is not valid!");
 
-    const q =
-      "INSERT INTO relationships(`followerUserId`,`followedUserId`) VALUES (?)";
+    // Check if relationship already exists
+    const checkQuery =
+      "SELECT * FROM relationships WHERE followerUserId = ? AND followedUserId = ?";
+    const checkValues = [userInfo.id, req.body.userId];
 
-    const values = [userInfo.id, req.body.userId];
+    db.query(checkQuery, checkValues, (err, result) => {
+      if (err) return res.status(500).json(err);
+      if (result.length > 0) {
+        return res.status(400).json("Relationship already exists.");
+      }
 
-    db.query(q, [values], (err, data) => {
-      if (err) return res.status(500).json(err.message);
-      // console.log(data);
-      return res.status(200).json(`following success!`);
+      // Proceed with INSERT operation
+      const insertQuery =
+        "INSERT INTO relationships (`followerUserId`, `followedUserId`) VALUES (?, ?)";
+      const insertValues = [userInfo.id, req.body.userId];
+
+      db.query(insertQuery, insertValues, (err, data) => {
+        if (err) return res.status(500).json(err);
+        return res.status(200).json("Following success!");
+      });
     });
   });
 };
@@ -43,10 +54,9 @@ export const deleteRelationship = async (req, res) => {
 
     const q =
       "DELETE FROM relationships WHERE followerUserId = ? AND followedUserId = ?";
-
     db.query(q, [userInfo.id, req.query.userId], (err, data) => {
-      if (err) return res.status(500).json(err.message);
-      return res.status(200).json(`success unfollow!`);
+      if (err) return res.status(500).json(err);
+      return res.status(200).json("Success unfollow!");
     });
   });
 };

@@ -44,7 +44,6 @@
               &:hover {
                 color: #5a70d1;
                 cursor: pointer;
-                text-decoration: underline;
               }
             }
 
@@ -53,6 +52,7 @@
             }
           }
         }
+
         button {
           position: absolute;
           top: 30px;
@@ -88,6 +88,36 @@
           cursor: pointer;
           font-size: 14px;
         }
+      }
+
+      .buyButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        z-index: 999;
+        gap: 5px;
+        cursor: pointer;
+        background-color: #f0544f;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+
+        &:hover {
+          background-color: #d0433a;
+        }
+
+        span {
+          font-size: 14px;
+        }
+
+        svg {
+          font-size: 20px;
+        }
+      }
+
+      .empty-span {
+        display: none;
       }
     }
   }

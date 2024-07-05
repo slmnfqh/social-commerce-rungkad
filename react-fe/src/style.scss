@@ -11,7 +11,7 @@ $themes: (
     logo: darkblue,
     bgSoft: #f6f3f3,
     textColorSoft: #555,
-    border: lightgray,
+    border: rgba(211, 211, 211, 0.693),
   ),
   dark: (
     textColor: whitesmoke,
@@ -19,7 +19,7 @@ $themes: (
     logo: white,
     bgSoft: #333,
     textColorSoft: lightgray,
-    border: #444,
+    border: #444444ad,
   ),
 );
 

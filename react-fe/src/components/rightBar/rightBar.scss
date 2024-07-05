@@ -1,18 +1,19 @@
 @import "../../style.scss";
 
 .rightBar {
+  font-family: "Poppins", sans-serif;
   @include themify($themes) {
     flex: 3;
     position: sticky;
-    top: 70px;
-    height: calc(100vh - 70px);
+    top: 50px;
+    height: calc(100vh - 50px);
     overflow: scroll;
     background-color: themed("bgSoft");
 
-    @include mobile{
+    @include mobile {
       display: none;
     }
-    @include tablet{
+    @include tablet {
       display: none;
     }
 
@@ -36,6 +37,7 @@
         }
 
         .user {
+          font-size: 14px;
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -54,22 +56,12 @@
               object-fit: cover;
             }
 
-            .online {
-              width: 12px;
-              height: 12px;
-              border-radius: 50%;
-              background-color: limegreen;
-              position: absolute;
-              top: 0;
-              left: 30px;
-            }
-
             p {
               color: themed("textColorSoft");
             }
 
             span {
-              font-weight: 500;
+              font-weight: 550;
               color: themed("textColor");
             }
           }
@@ -81,14 +73,13 @@
 
             button {
               border: none;
-              padding: 5px;
+              padding: 7px 10px;
               color: white;
               cursor: pointer;
-
+              border-radius: 2px;
               &:first-child {
                 background-color: #5271ff;
               }
-
               &:last-child {
                 background-color: #f0544f;
               }

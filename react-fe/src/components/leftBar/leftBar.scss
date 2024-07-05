@@ -1,16 +1,18 @@
 @import "../../style.scss";
 
 .leftBar {
+  font-family: "Poppins", sans-serif;
+
   @include themify($themes) {
     flex: 2;
     position: sticky;
-    top: 70px;
-    height: calc(100vh - 70px);
+    top: 50px;
+    height: calc(100vh - 50px);
     overflow: scroll;
     background-color: themed("bg");
     color: themed("textColor");
 
-    @include mobile{
+    @include mobile {
       display: none;
     }
 
@@ -22,7 +24,7 @@
       padding: 20px;
 
       hr {
-        margin: 20px 0px;
+        margin: 20px 0;
         border: none;
         height: 0.5px;
         background-color: themed("border");
@@ -35,12 +37,18 @@
 
         span {
           font-size: 12px;
+          color: themed("textColor");
         }
 
         .user {
           display: flex;
           align-items: center;
           gap: 10px;
+          cursor: pointer;
+
+          &:hover {
+            opacity: 0.8;
+          }
 
           img {
             width: 30px;
@@ -51,6 +59,7 @@
 
           span {
             font-size: 14px;
+            font-weight: bold;
           }
         }
 
@@ -58,13 +67,20 @@
           display: flex;
           align-items: center;
           gap: 10px;
+          cursor: pointer;
+
+          &:hover {
+            opacity: 0.8;
+          }
 
           img {
             width: 30px;
+            height: auto;
           }
 
           span {
             font-size: 14px;
+            font-weight: 500;
           }
         }
       }
