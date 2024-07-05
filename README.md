@@ -28,7 +28,7 @@ https://github.com/slmnfqh/social-commerce-rungkad
 selanjutnya buka folder socialCommerce pada text editor (contoh: visualstudiocode).
 kemudian buka 2 terminal pada vscode, 1 terminal untuk layer backend. dan 1 lagi untuk layer frontend.
 
-### 3. Run Project in Android Studio
+### 3. Run Project
 jalankan kedua layer tersebut dengan perintah:
 - layer backend : 
 masuk kedalam directory express-be, kemudian jalankan "npm run start"
