@@ -30,10 +30,11 @@ kemudian buka 2 terminal pada vscode, 1 terminal untuk layer backend. dan 1 lagi
 
 ### 3. Run Project
 jalankan kedua layer tersebut dengan perintah:
+
 - layer backend : 
 masuk kedalam directory express-be, kemudian jalankan "npm run start"
 
--layer frontend : 
+- layer frontend : 
 masuk kedalam directory react-fe, kemudian jalankan "npm run dev", khusus untuk layer frontend nanti akan muncul ouput link vite "http://localhost:5173/", silahkan copy link nya, kemudian paste pada browser (contoh: chrome).
 
 ## Thank You :)
