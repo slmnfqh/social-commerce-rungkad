@@ -1,6 +1,6 @@
 # Project WebProgramming 2
 ## Introduction 👋
-**Tim : Rungkad**
+**Team : Rungkad**
 
 Halo semuanya! Kami dari **Tim Rungkad**. Kami terdiri dari 5 orang dan ini adalah anggota tim saya:
 
