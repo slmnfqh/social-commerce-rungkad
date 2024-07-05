@@ -23,8 +23,6 @@ RUNGKAD, singkatan dari Ruang Karya Digital, adalah platform yang menggabungkan 
 ```bash
 https://github.com/slmnfqh/social-commerce-rungkad
 ```
-or you can use Android Studio 
-File > New > Project from Version Control ...
 
 ### 2. Open the Project in your Text Editor 
 selanjutnya buka folder socialCommerce pada text editor (contoh: visualstudiocode).
