@@ -1,7 +1,7 @@
 @import "../../style.scss";
 
 .profile {
-  height: 100vh;
+  max-height: 100%;
   font-family: "Poppins", sans-serif;
   @include themify($themes) {
     background-color: themed("bgSoft");

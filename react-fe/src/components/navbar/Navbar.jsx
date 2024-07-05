@@ -99,20 +99,25 @@ const Navbar = () => {
             style={{ display: searchResults.length > 0 ? "block" : "none" }}
           >
             <ul>
-              {searchResults.length > 0
-                ? searchResults.map((user) => (
-                    <li key={user.id}>
-                      <a href={`/profile/${user.id}`}>
-                        <img
-                          src={`../public/upload/${user.profilePic}`}
-                          alt=""
-                        />
-                        <p>{user.username}</p>
-                      </a>
-                    </li>
-                  ))
-                : !loading &&
-                  error && <li className="error-message">User not found.</li>}
+              {searchResults.length > 0 ? (
+                searchResults.map((user) => (
+                  <li key={user.id}>
+                    <a href={`/profile/${user.id}`}>
+                      <img
+                        src={
+                          user.profilePic
+                            ? `/upload/${user.profilePic}`
+                            : defaultProfilePic
+                        }
+                        alt=""
+                      />
+                      <p>{user.username}</p>
+                    </a>
+                  </li>
+                ))
+              ) : !loading && error ? (
+                <li className="error-message">User not found.</li>
+              ) : null}
             </ul>
           </div>
         </div>

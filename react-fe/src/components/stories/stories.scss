@@ -42,7 +42,7 @@
         position: absolute;
         bottom: 10px;
         left: 10px;
-        color: themed("textColor");
+        color: rgb(255, 255, 255);
         font-weight: 500;
         @include mobile {
           display: none;
