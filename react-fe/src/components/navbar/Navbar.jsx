@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import "./navbar.scss";
 import { Link } from "react-router-dom";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";

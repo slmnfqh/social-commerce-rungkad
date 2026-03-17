@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { AuthContext } from "../../context/authContext";
 import { makeRequest } from "../../axios";
