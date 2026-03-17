@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import EventIcon from "@mui/icons-material/Event";

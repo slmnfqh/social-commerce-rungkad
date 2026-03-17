@@ -10,7 +10,7 @@ const Login = () => {
     username: "",
     password: "",
   });
-  const [err, setErr] = useState(null);
+  const [, setErr] = useState(null);
 
   const navigate = useNavigate();
   const MySwal = withReactContent(Swal);
@@ -66,7 +66,7 @@ const Login = () => {
             Consectetur culpa, iusto doloremque, excepturi autem nemo expedita
             voluptatem distinctio!
           </p>
-          <span>Don't you have an account?</span>
+          <span>Don&apos;t you have an account?</span>
           <Link to="/register">
             <button>Register</button>
           </Link>
